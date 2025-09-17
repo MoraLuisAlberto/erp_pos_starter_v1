@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
+#!/usr/bin/env bash
+set -euo pipefail
 
 # Requiere: curl, jq
 command -v jq >/dev/null 2>&1 || { echo "Necesitas jq (sudo apt-get install -y jq)"; exit 1; }
@@ -34,3 +36,4 @@ today=$(date -u +%F)
 curl -sS "$BASE/reports/coupon/audit/range?start=$today&end=$today&mode=utc" | jq .
 
 echo "SMOKE OK ✓"
+
